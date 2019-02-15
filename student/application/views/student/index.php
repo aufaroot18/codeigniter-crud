@@ -19,7 +19,7 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
+          <h3 class="box-title">Data Mahasiswa</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -30,13 +30,32 @@
           </div>
         </div>
         <div class="box-body">
-          Start creating your amazing application!
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Jurusan</th>
+                <th scope="col">No Hp</th>
+                <th scope="col">Email</th>
+                <th scope="col">Alamat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach($mahasiswa as $mhs): ?>
+              <tr>
+                <td><?= $mhs->id ?></td>
+                <td><?= $mhs->nama ?></td>
+                <td><?= $mhs->jurusan ?></td>
+                <td><?= $mhs->no_hp ?></td>
+                <td><?= $mhs->email ?></td>
+                <td><?= $mhs->alamat ?></td>
+              </tr>
+              <?php endforeach ?>
+            </tbody>
+          </table>
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
-        <!-- /.box-footer-->
       </div>
       <!-- /.box -->
 
