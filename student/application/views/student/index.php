@@ -39,6 +39,7 @@
                 <th scope="col">No Hp</th>
                 <th scope="col">Email</th>
                 <th scope="col">Alamat</th>
+                <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -50,6 +51,10 @@
                 <td><?= $mhs->no_hp ?></td>
                 <td><?= $mhs->email ?></td>
                 <td><?= $mhs->alamat ?></td>
+                <td>
+                    <a href="<?php base_url() ?>student/update/<?= $mhs->id ?>">Edit</a>
+                    <a href="<?php base_url() ?>student/delete/<?= $mhs->id ?>">Delete</a>
+                  </td>
               </tr>
               <?php endforeach ?>
             </tbody>
