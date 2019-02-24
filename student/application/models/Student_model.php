@@ -17,4 +17,23 @@ class Student_model extends CI_Model {
 
 		$this->db->insert('mahasiswa', $data);
 	}
+
+	public function get_one_student($id) {
+		$this->db->where("id", $id);
+		$query = $this->db->get('mahasiswa')->row_array();
+		return $query;
+	}
+
+	public function update_student() {
+		$data = array(
+			'nama' => $this->input->post('nama'),
+			'jurusan' => $this->input->post('jurusan'),
+			'no_hp' => $this->input->post('hp'),
+			'email' => $this->input->post('email'),
+			'alamat' => $this->input->post('alamat'),
+		);
+
+		$this->db->where('id', $this->input->post('id'));
+		$this->db->update('mahasiswa', $data);
+	}
 }
