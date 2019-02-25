@@ -48,7 +48,11 @@ class Student extends CI_Controller {
 		else {
 			$this->Student_model->update_student();
 			redirect("student");
-		}
-		
+		}	
+	}
+
+	public function delete($id) {
+		$this->Student_model->delete_student($id);
+		redirect('student');
 	}
 }
