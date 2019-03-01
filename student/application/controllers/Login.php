@@ -18,4 +18,8 @@ class Login extends CI_Controller {
 			redirect('admin');
 		}
 	}
+
+	public function logout() {
+		redirect('login');
+	}
 }
