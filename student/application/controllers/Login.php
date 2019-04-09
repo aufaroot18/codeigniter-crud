@@ -15,11 +15,13 @@ class Login extends CI_Controller {
 			redirect('login');
 		}
 		else {
+			$this->session->set_userdata('logged_in', TRUE);
 			redirect('admin');
 		}
 	}
 
 	public function logout() {
+		$this->session->sess_destroy();
 		redirect('login');
 	}
 }
